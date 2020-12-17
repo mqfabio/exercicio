@@ -1,35 +1,23 @@
-let penultimo = 0
-let ultimo = 1
-let atual = penultimo + ultimo
-let acc = 0
 
-
+//atual = Math.ceil( val_inicial / ( (1+Math.sqrt(Val_inicial))/ 2 ) )
 
 function gerarNumerosFibo(val_inicial, qtd_item_fibo) {
+    let penultimo = 0
+    let ultimo = 1
+    let atual = penultimo + ultimo
     let numeros = []
-    while(1) {
-        if(atual == val_inicial) {
-            let volta = 1
-            do {
-                penultimo = ultimo;
-                ultimo = atual;
-                atual = penultimo + ultimo;
-                numeros.push(atual)
-            }
-            while(++volta <= qtd_item_fibo);
-            break
-        }
-        else {
-            penultimo = ultimo;
-            ultimo = atual;
-            atual = penultimo + ultimo;
-        }
+  
+    while(numeros.length < qtd_item_fibo) {
+        penultimo = ultimo;
+        ultimo = atual;
+        atual = penultimo + ultimo;
+        if(atual > val_inicial) {
+            numeros.push(atual)
+        }       
     }
+    
     return numeros;
 }
-
-
-
 
 
 function ordenarNumeros(numeros, ordem) {
@@ -42,7 +30,6 @@ function ordenarNumeros(numeros, ordem) {
         }        
     
 }
-
 
  
 function gerarProximosNumerosEOrdernar(numeroInicial,qtd, ordem) {
