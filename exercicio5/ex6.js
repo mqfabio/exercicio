@@ -1,4 +1,4 @@
-const transacoes = require("./transacoes.json");
+//const transacoes = require("./transacoes.json");
 
 function agruparMesEAno(lista) {
     let yearMonth
@@ -43,20 +43,20 @@ function relatodioTransacoes(transacoesAgrupadaPorMes) {
         let ano = data.getFullYear()
         let mes = data.getMonth()
         let totalBeneficios = iten.transacoes.reduce((valorAnt, valorInicial) => valorAnt + valorInicial.beneficio.valor, 0);
-        mediaDosBeneficios = totalBeneficios / iten.transacoes.length;
+        let mediaDosBeneficios = totalBeneficios / iten.transacoes.length;
         resultadoRelatorioTransacoes.push({
-            "Ano": ano,
-            "Mes": mes + 1,
-            "Quantidade de transações": iten.transacoes.length,
-            "Total de beneficios": totalBeneficios,
-            "Valor medio dos beneficios": mediaDosBeneficios
+            "ano": ano,
+            "mes": mes + 1,
+            "quantidadeDeTransacoes": iten.transacoes.length,
+            "totalDeBeneficios": totalBeneficios,
+            "ValorMedioDosBeneficios": mediaDosBeneficios
         })
     })
 
     return resultadoRelatorioTransacoes
 }
 
-function relatoriosPorMes(transacoes) {
+export default function relatoriosPorMes(transacoes) {
     let agrupados = agruparMesEAno(transacoes)
     let listaOrdenada = transacoesNaOrdem(agrupados)
     let relatorios = relatodioTransacoes(listaOrdenada)
@@ -64,4 +64,3 @@ function relatoriosPorMes(transacoes) {
 }
 
 
-console.log(JSON.stringify(relatoriosPorMes(transacoes)))  

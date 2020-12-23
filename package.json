@@ -1,0 +1,23 @@
+{
+  "name": "exercicio",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js --watchAll"
+  },
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mqfabio/exercicio.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mqfabio/exercicio/issues"
+  },
+  "homepage": "https://github.com/mqfabio/exercicio#readme",
+  "devDependencies": {
+    "jest": "^26.6.3"
+  }
+}
