@@ -28,10 +28,10 @@ function agruparMesEAno(lista) {
 }
 
 function transacoesNaOrdem(listaTransacoes) {
-    let listaRdenada = listaTransacoes.sort((a,b) => {
+    let listaOrdenada = listaTransacoes.sort((a,b) => {
         return Date.parse(b.yearMonth) - Date.parse(a.yearMonth) 
     })
-return listaRdenada
+return listaOrdenada
 }
 
 
